@@ -1,13 +1,17 @@
 package com.roynaldi19.bfaa07_04datastore
 
+import android.content.Context
 import android.os.Bundle
 import android.widget.CompoundButton
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.datastore.core.DataStore
+import androidx.datastore.preferences.core.Preferences
+import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.switchmaterial.SwitchMaterial
-import java.util.prefs.Preferences
+
+private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
 
 class MainActivity : AppCompatActivity() {
 
